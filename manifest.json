@@ -1,0 +1,47 @@
+{
+    "manifest_version": 2,
+    
+    "name": "QQ KLines",
+    "description": "Display QQ K lines which you care about.",
+    "version": "1.0",
+
+    "icons": {
+        "16":"icon.png",
+        "48":"icon.png",
+        "128":"icon.png"
+    },
+    "author": "Achilles Xu",
+
+    /* deprecated
+    "browser_action": {
+        "default_icon": "kline19.jpeg",
+        "default_popup": "popup.html"
+    },*/
+    "content_scripts": [
+        {
+            "matches" : ["http://stock.qq.com/i/"],
+            "js" : ["jquery-2.1.0.min.js", "inject1.js"]
+        },
+        {
+            "matches" : ["http://stockhtm.finance.qq.com/astock/ggcx/*.htm"],
+            "js": ["jquery-2.1.0.min.js", "inject2.js"]
+        },
+        {
+            "matches" : ["http://stockapp.finance.qq.com/mstats/"],
+            "js": ["jquery-2.1.0.min.js", "inject3.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["jquery-2.1.0.min.js", "lsarray.js", "eventPage.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "http://stock.qq.com/",
+        "http://data.gtimg.cn/",
+        "activeTab",
+        "tabs"
+    ]
+    /* deprecated 
+    "content_security_policy": "script-src 'self'; object-src 'self' https://data.gtimg.cn"
+    */
+}
