@@ -6,7 +6,8 @@ $(document).ready(function() {
     timer = setInterval(function() {
         var div = $("#body-wrapper .head-dora");
         if (div.html()) {
-            div.append(' | <a href="#" class="fun" id="qq_kline_config">配置K线汇总图</a> | <a href="#" class="fun" id="qq_kline_show">查看K线汇总</a> ');
+            div.append(' | <a href="#" class="fun" id="qq_kline_config">配置K线汇总图</a> | <a href="#" class="fun" id="qq_kline_show">查看K线汇总</a>');
+            $("a#guojinad").css("display", "none");
             clearInterval(timer);
             console.log("link added");
 
