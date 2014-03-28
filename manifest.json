@@ -33,11 +33,13 @@
     ],
     "background": {
         "scripts": ["jquery-2.1.0.min.js", "lsarray.js", "eventPage.js"],
-        "persistent": false
+        "persistent": true
     },
     "permissions": [
+        "webRequest",
         "http://stock.qq.com/",
         "http://data.gtimg.cn/",
+        "https://invest2.firstrade.com/",
         "activeTab",
         "tabs"
     ]

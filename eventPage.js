@@ -2,6 +2,16 @@
 localStorage.configing = "";
 console.log("event page start");
 
+chrome.webRequest.onCompleted.addListener(
+    function(details) {
+        console.log("got web request " + details.url);
+    },
+    {
+        urls: ["https://invest2.firstrade.com/cgi-bin/getchain*"]
+    },
+    [
+    ]);
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.show) {
         chrome.tabs.create({
@@ -52,7 +62,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                     var embed = embeds[j];
                     content += embed + "\n";
                     if (j % 2 != 0) {
-                        content +="<br/>\n";
+                        //content +="<br/>\n";
                     }
                 }
                 localStorage.embeds_str = content;

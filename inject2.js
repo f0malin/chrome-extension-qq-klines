@@ -6,7 +6,7 @@ $(document).ready(function() {
         if (embed) {
             console.log(embed);
             clearInterval(timer);
-            chrome.runtime.sendMessage({embed: embed});
+            chrome.runtime.sendMessage({embed: '<div style="float:left"><a href="' + window.location + '" target="_blank">明细</a><br/>'+embed+'</div>'});
             
         } else {
             console.log("not yet");
